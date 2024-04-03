@@ -1,0 +1,57 @@
+checkpoint_dir: "./fol_ego_checkpoints"
+
+# dataset arguments
+seed_max: 5
+segment_len: 4
+
+# training parameters
+n_epochs : 100
+g_lr: 0.0001
+
+#train discriminator or not
+adversarial : False
+
+# loss weights
+
+box_w : 0.1
+# for lp loss. e.g, 1 or 2 for l1 and l2 loss, respectively)
+l_num : 2
+# the power to which each gradient term is raised in GDL loss
+alpha_num : 1
+# the percentage of the adversarial loss to use in the combined loss
+lam_adv : 1
+# the percentage of the lp loss to use in the combined loss
+lam_lp : 1
+# the percentage of the GDL loss to use in the combined loss
+lam_gdl : 1
+# the percentage of the different frame loss
+
+
+
+
+
+# fol model parameters
+pred_timesteps: 15
+input_embed_size: 512
+flow_enc_size: 512
+box_enc_size: 512
+with_ego: False
+
+enc_hidden_size: 512 # no use
+enc_concat_type: "average"
+predictor_input_size: 512
+dec_hidden_size: 512
+pred_dim: 4
+
+# dataloader parameters
+batch_size: 32
+shuffle: True
+num_workers: 0
+
+# image parameters
+H: 720
+W: 1280
+channels: 3
+
+# Anomaly detection parameters
+max_age: 10
